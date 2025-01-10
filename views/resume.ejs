@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        
+body { 
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+  color: #333;
+}
+
+
+.resume-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+header {
+    
+    background-color: #333;
+    padding: 25px;
+    color: white;
+    text-align: center;
+     margin-bottom: 20px;
+     text-align: center;
+     border-radius: 10px;
+     
+}
+
+header h1 {
+text-align: center;
+  font-size: 2;
+  margin-bottom: 10px;
+  color: White;
+}
+
+header p {
+    text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 1.2rem;
+  border-bottom: 2px solid #4CAF50;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  color: #4CAF50;
+}
+
+.job {
+  margin-bottom: 15px;
+}
+
+.company {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.details {
+  display: none;
+  margin-top: 10px;
+  color: #444;
+}
+
+.toggle-btn {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.toggle-btn:hover {
+  background: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #4CAF50;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* General container styling */ 
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
+  font-size: 1.2rem;
+}
+
+/* Card styling */
+.card {
+  width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card content styling */
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+} 
+
+
+
+ </style>
+</head>
+
+<body>
+<div class="resume-container">
+
+<header>
+<h1>Ashley Garriga<br></h1>
+<p>
+<b>Email: </b>  Garriga@g19programs.com<br>
+<b>Phone: </b>  662-418-9732<br>
+<br>
+</p>
+</header>
+
+<div class="card-container">
+<div class="card">
+<div class="card-content">
+<h3 class="card-title">Professional Summary</h3>
+<p class="card-text">
+    <p>
+    Experiance with React, Flask, Node js, and MySQL,  building responsive web
+    applications,  developing RESTful APIs,  and integrating machine learning models using Microsoft Fabric, and API keys. Skilled in
+    database management, server deployment, and creating dynamic user interfaces.
+    </p>
+                   
+ </div>
+ </div>
+        
+
+<div class="card-container">
+<div class="card">
+<div class="card-content">
+<h3 class="card-title"></h3>
+<p class="card-text">
+<b>Sudden Services, LLC - Louisville, MS</b><br>
+                    <b>Vision Plus Technician</b><br>
+                    <i>August 2022 to Present</i><br> <br>
+                        ♦    Build, update, program, calibrate, and repair Pedestrian Detection Systems for industrial forklifts<br>
+                        ♦    Provide prompt service and documentation to production supervisors<br>
+                        ♦    Communicate effectively with supervisors, inspectors, electricians, and other personnel<br>
+                        ♦    Assist The Product Designer with operational tasks</p>
+            
+</div>
+</div>
+            
+            
+
+<div class="card-container">
+    <div class="card">
+        <div class="card-content">
+            <h3 class="card-title"></h3>
+            <p class="card-text">
+                <b>Gator Computers, LLC - Philadelphia, MS</b><br>
+                <b>Repair Technician</b><br>
+                  <i> February 2022 - Augest 2022<i> <br>
+                   <br>
+                ♦  Computer software repairs: PCI drivers, configure BIOS settings, OS updates<br>
+                ♦  Computer hardware replacements: SSD, HHD, RAM, graphics cards, CPU <br>
+                ♦  Cell phone repairs: screen replacements, port replacements, battery replacements<br>
+                ♦  Provide prompt service and documentation to production supervissor<br>
+            </p>       
+        
+</div>
+</div>
+               
+
+ <div class="card-container">
+<div class="card">
+<div class="card-content">
+<h3 class="card-title"><b</b></h3>
+<p class="card-text"><b>Microtel Inn and Suites by Wyndham - Starkville, MS</b><br>
+<i>Auditor Clerk  <br> February - 2020 - Augest 2023</i><br> <br>
+                        ♦  Optimize front office operations by delegating tasks to staff and enforcing standard operating procedure<br>
+                        ♦  Supervise and train new hires<br>
+                        ♦  Complete audit procedures, stay log reports, calculate room revenue and ADR
+</div>
+</div>
+                       
+
+
+        
+
+
+<div class="card-container">
+<div class="card">
+<div class="card-content">
+<h3 class="card-title"><b> Education </b></h3>
+<p class="card-text"><b>Mississippi University for Women:</b>  <i>  B.S. Degree -  Biology</i> <br>
+                    <b>Mississippi Coding Academy:</b><i>    Web Developement</i>  -   March 2024 - Present</p>
+</div>
+</div>
+            
+        
+
+</div>    
+</div>
+</div>
+</div>
+    
+    
+  <script>document.addEventListener('DOMContentLoaded', () => {
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const details = button.nextElementSibling;
+                const isVisible = details.style.display === 'block';
+                details.style.display = isVisible ? 'none' : 'block';
+                button.textContent = isVisible ? 'Details' : 'Hide Details';
+            });
+        });
+    });
+
+</script>
+</body>
+
+</html>

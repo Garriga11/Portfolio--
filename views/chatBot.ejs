@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #444;
+        }
+
+        #chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #chatbox {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #fafafa;
+            margin-bottom: 10px;
+        }
+
+        #chatbox p {
+            margin: 5px 0;
+        }
+
+        #chatbox p.user {
+            color: #007bff;
+            text-align: right;
+        }
+
+        #chatbox p.bot {
+            color: #28a745;
+            text-align: left;
+        }
+
+        #input-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #message {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>G19 Programs ChatBot</h1>
+    <div id="chat-container">
+        <div id="chatbox"></div>
+        <div id="input-container">
+            <input id="message" type="text" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById("message").value;
+            if (!message.trim()) return; // Avoid empty messages
+
+            // Append user message to chatbox
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<p class="user">You: ${message}</p>`;
+
+            // Clear input field
+            document.getElementById("message").value = '';
+
+            // Send message to server
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message })
+            });
+
+            const data = await response.json();
+
+            // Append bot response to chatbox
+            chatbox.innerHTML += `<p class="bot">Bot: ${data.response}</p>`;
+
+            // Auto-scroll to the bottom
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>

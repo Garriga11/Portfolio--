@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Game></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #gameBoard {
+            width: 604px;
+            height: 604px;
+            border: 2px solid #000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="count">Count: <span id="countDisplay">0</span></h1>
+    <div id="gameBoard"></div>
+    <script>
+        const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'brown', 'cyan'];
+        const boxes = [];
+
+        for (let i = 0; i < 9; i++) {
+            boxes.push({ id: i, color: colors[i] });
+        }
+
+        const gameBoard = document.getElementById('gameBoard');
+        const countDisplay = document.getElementById('countDisplay');
+        let count = 0;
+
+        boxes.forEach(box => {
+            const div = document.createElement('div');
+            div.classList.add('box');
+            div.id = `box-${box.id}`;
+            div.style.backgroundColor = box.color;
+            gameBoard.appendChild(div);
+
+            div.addEventListener('click', () => {
+                let randomColor = colors[Math.floor(Math.random() * colors.length)];
+                div.style.backgroundColor = randomColor;
+                count++;
+                countDisplay.textContent = count;
+            });
+        });
+
+    </script>
+</body>
+
+</html>

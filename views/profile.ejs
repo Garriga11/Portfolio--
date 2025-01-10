@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%= title % </title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f9;
+color: #333;
+}
+
+header {
+background-color: #4CAF50;
+color: white;
+padding: 10px 0;
+text-align: center;
+}
+
+main {
+padding: 20px;
+}
+
+form {
+max-width: 400px;
+margin: 0 auto;
+padding: 20px;
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+input[type="submit"] {
+background-color: #4CAF50;
+color: white;
+border: none;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #45a049;
+}
+
+footer {
+text-align: center;
+padding: 10px;
+background-color: #333;
+color: white;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome, <%= user.username %>!</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Your Profile</h2>
+            <ul>
+                <li><strong>Username:</strong>
+                    <%= user.username %>
+                </li>
+                <% if (user.email) { %>
+                    <li><strong>Email:</strong>
+                        <%= user.email %>
+                    </li>
+                    <% } %>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Actions</h3>
+            <ul>
+                <li><a href="publicChat">Go to Public Chat</a></li>
+              
+                <li><a href="profile">Logout</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; G19 Programs 2024</p>
+
+    </footer>
+</body>
+
+</html>
